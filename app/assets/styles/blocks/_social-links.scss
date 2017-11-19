@@ -1,0 +1,19 @@
+.b-social-links {
+  margin: 10px 0 20px;
+
+  &__item {
+	color: $c-white;
+	text-decoration: none;
+  }
+}
+
+@media only screen and (min-width: 46rem) {
+  .b-social-links {
+	margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 74rem) {
+  .b-social-links {
+	margin-top: 210px;
+  }
+}

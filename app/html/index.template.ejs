@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <title>{{title}}</title>
+    <title>Barhat</title>
 
     <meta charset="utf-8">
     <meta name="theme-color" content="#31393f">
@@ -40,60 +40,84 @@
 </head>
 <body>
 <div id="app">
-    <div class="f-tabs js-tabs">
-        <div class="f-tabs__header">
-            <div class="container-fluid">
-                <div class="row">
+    <div class="g-page g-page_coming-soon">
+        <main class="g-main-container container-flex">
+            <div class="g-main-container__inner">
+                <div class="row center-xs">
+                    <div class="col-xs-8 col-sm-6 col-lg-12">
+                        <a href="/" class="g-nav__logo"><img src="/assets/images/logo.png" alt=""
+                                                             class="g-image__responsive"></a>
+                    </div>
+                </div>
+                <div class="row center-xs middle-sm">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <nav class="g-nav">
+                                    <a href="#">логотипы</a>
+                                    <a href="#">фирменные стили</a>
+                                    <a href="#">полиграфия</a>
+                                    <a href="#">упаковка</a>
+                                    <a href="#">сайты</a>
+                                </nav>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="b-contacts">
+                                    <a href="tel:+7 (473) 294 97 53" class="b-contacts__item">
+                                        <i class="g-icon g-icon_phone"></i> <span>+7 (473) 294 97 53</span>
+                                    </a>
+                                    <a href="tel:+7 (952) 542 35 89" class="b-contacts__item">
+                                        <i class="g-icon g-icon_mobile"></i> <span>+7 (952) 542 35 89</span>
+                                    </a>
+                                    <a href="mailto:info@a-barhat.ru" class="b-contacts__item">
+                                        <i class="g-icon g-icon_mail-alt"></i> <span>info@a-barhat.ru</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-xs-12">
-                        <ul>
-                            <li class="f-tabs__header-element active">
-                                <a href="#" class="js-tab-header-element">
-                                    Заказы
-                                </a>
-                            </li>
-                            <li class="f-tabs__header-element">
-                                <a href="#" class="js-tab-header-element">Личная информация</a>
-                            </li>
-                        </ul>
+                        <div class="b-social-links">
+                            <a href="https://www.instagram.com/a_barhat/" class="b-social-links__item">
+                                <i class="g-icon g-icon_instagram"></i>
+                            </a>
+                            <a href="https://vk.com/barhatagency" class="b-social-links__item">
+                                <i class="g-icon g-icon_vkontakte"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <a href="/barhat-pres.pdf" class="g-link" download>скачать презентацию</a>
+                    </div>
+                    <div class="col-xs-10 col-sm-14">
+                        <div class="b-coming-soon">
+                            <div class="b-coming-soon__description">
+                                сайт находится на реконструкции,
+                                приносим свои извинения
+                                за временные неудобства
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="f-tabs__body">
-            <div class="f-tabs-body-element active js-tab-body-element" data-index="0">
-                test1
+        </main>
+        <footer class="g-footer">
+            <div class="container-flex">
+                <div class="row center-xs">
+                    <div class="col-xs-12">
+                        <p class="g-footer__copyright">
+                            (c) Дизайн-агентство «Бархат».
+                            все права защищены
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="f-tabs-body-element js-tab-body-element" data-index="1">
-                test2
-            </div>
-        </div>
-    </div>
-
-    <form action="#" class="js-form" novalidate>
-        <input type="text" name="name">
-        <input type="email" name="email">
-        <input type="checkbox"> fasfas
-        <input type="submit" value="Отправить">
-    </form>
-
-    <div class="js-component" data-component="Component1"></div>
-    <div class="js-component" data-component="Component2" data-options='{"name": "My name is component 2"}'></div>
-
-    <div class="container">
-        <div class="row center-xs">
-            <div class="col-xs-3">
-                <div class="about-company about-company-1"></div>
-            </div>
-            <div class="col-xs-3">
-                <div class="about-company about-company-2"></div>
-            </div>
-            <div class="col-xs-3">
-                <div class="about-company about-company-3"></div>
-            </div>
-            <div class="col-xs-3">
-                <div class="about-company about-company-4"></div>
-            </div>
-        </div>
+        </footer>
     </div>
 </div>
 </body>

@@ -59,12 +59,12 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: {url: false}
+            options: { url: false }
           },
           'css-validator-loader',
           {
             loader: 'sass-loader',
-            options: {outputStyle: 'expanded'}
+            options: { outputStyle: 'expanded' }
           }
         ]
       }
@@ -74,7 +74,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {NODE_ENV: '"development"'},
+      'process.env': { NODE_ENV: '"development"' },
       // 'API_PATH': '"http://192.168.1.7:3000/api/"'
       'API_PATH': '"http://localhost:1488/api/"'
     }),

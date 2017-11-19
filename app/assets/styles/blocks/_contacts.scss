@@ -1,0 +1,55 @@
+.b-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0;
+
+  &__item {
+	display: flex;
+	width: 100%;
+	font-family: $f-oranien-baum-regular;
+	font-size: 18px;
+	color: $c-white;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-decoration: none;
+  }
+
+  &__item .g-icon {
+	display: flex;
+	color: $c-main-color;
+	flex-basis: 100%;
+	justify-content: center;
+	margin: 11px 0;
+  }
+
+  &__item span {
+	display: flex;
+	flex-basis: 100%;
+	justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 46rem) {
+  .b-contacts {
+	&__item {
+	  flex-wrap: nowrap;
+	  justify-content: flex-start;
+	  align-items: center;
+	  font-size: 22px;
+
+	  &:last-child .g-icon {
+		font-size: 20px;
+	  }
+	}
+
+	&__item .g-icon {
+	  flex-basis: 30px;
+	  margin: 5px 20px 5px 0;
+	}
+
+	&__item span {
+	  flex-basis: inherit;
+	}
+  }
+}
+
