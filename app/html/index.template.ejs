@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <title>{{title}}</title>
+
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#31393f">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <!-- <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-64x64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="/img/favicon-128x128.png" sizes="128x128"> -->
+    <% for(var i = 0; i < htmlWebpackPlugin.files.css.length; i++) { %>
+    <link rel="preload"
+          href="<%= '/assets/css' + htmlWebpackPlugin.files.css[i].slice(htmlWebpackPlugin.files.css[i].lastIndexOf('/')) %>"
+          as="style">
+    <% } %>
+    <!--<link rel="preload" href="/fonts/regular/oswald-regular.woff2" as="font" type="font/woff2" crossorigin>-->
+    <!--<link rel="preload" href="/fonts/os-regular/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>-->
+    <% for(var i = 0; i < htmlWebpackPlugin.files.css.length; i++) { %>
+    <link rel="stylesheet"
+          href="<%= '/assets/css' + htmlWebpackPlugin.files.css[i].slice(htmlWebpackPlugin.files.css[i].lastIndexOf('/')) %>"
+          media="none" onload="if(media!='all')media='all'">
+    <noscript>
+        <link rel="stylesheet"
+              href="<%= '/assets/css' + htmlWebpackPlugin.files.css[i].slice(htmlWebpackPlugin.files.css[i].lastIndexOf('/')) %>">
+    </noscript>
+    <% } %>
+    <% for(var i = 0; i < htmlWebpackPlugin.files.js.length; i++) { %>
+    <script defer
+            src="<%= '/assets/js' + htmlWebpackPlugin.files.js[i].slice(htmlWebpackPlugin.files.js[i].lastIndexOf('/')) %>"></script>
+    <% } %>
+</head>
+<body>
+<div id="app">
+    <div class="f-tabs js-tabs">
+        <div class="f-tabs__header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul>
+                            <li class="f-tabs__header-element active">
+                                <a href="#" class="js-tab-header-element">
+                                    Заказы
+                                </a>
+                            </li>
+                            <li class="f-tabs__header-element">
+                                <a href="#" class="js-tab-header-element">Личная информация</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f-tabs__body">
+            <div class="f-tabs-body-element active js-tab-body-element" data-index="0">
+                test1
+            </div>
+            <div class="f-tabs-body-element js-tab-body-element" data-index="1">
+                test2
+            </div>
+        </div>
+    </div>
+
+    <form action="#" class="js-form" novalidate>
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <input type="checkbox"> fasfas
+        <input type="submit" value="Отправить">
+    </form>
+
+    <div class="js-component" data-component="Component1"></div>
+    <div class="js-component" data-component="Component2" data-options='{"name": "My name is component 2"}'></div>
+
+    <div class="container">
+        <div class="row center-xs">
+            <div class="col-xs-3">
+                <div class="about-company about-company-1"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="about-company about-company-2"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="about-company about-company-3"></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="about-company about-company-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
