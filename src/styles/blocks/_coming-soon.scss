@@ -1,0 +1,17 @@
+.b-coming-soon {
+  margin-top: 27px;
+
+  &__description {
+	font-family: $f-rale-way-semibold;
+	font-size: 10px;
+	color: $c-main-color;
+	line-height: 1.6;
+	text-transform: uppercase;
+  }
+}
+
+@media only screen and (min-width: 61rem) {
+  .b-coming-soon {
+	margin-top: 50px;
+  }
+}

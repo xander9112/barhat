@@ -1,0 +1,221 @@
+@import "variables";
+
+// Центрирование блока с произвольной шириной по горизонтали.
+@mixin center-position-horizontally() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /*!* с вендорными префиксами все браузеры от ie 9 *!*/
+}
+
+// Центрирование блока с произвольной высотой по вертикали.
+@mixin center-position-vertically() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Центрирование блока с произвольными размерами
+@mixin center-position() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Базовые стили для псевдоэлементов
+@mixin pseudo($width, $height: $width, $position: absolute, $content: '', $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+  width: $width;
+  height: $height;
+}
+
+// Колонки текста
+@mixin columns($colWidth: 250px, $colCount: 0, $colGap: 50px, $colRuleWidth: 0, $colRuleColor: inherit, $colRuleStyle: solid) {
+  column-width: $colWidth;
+  column-count: $colCount;
+  column-gap: $colGap;
+  column-rule-color: $colRuleColor;
+  column-rule-style: $colRuleStyle;
+  column-rule-width: $colRuleWidth;
+}
+
+// Шрифт
+@mixin font($size, $family: inherit, $color: inherit, $lineHeight: inherit, $letterSpacing: inherit, $weight: inherit, $style: inherit) {
+  font-size: $size;
+
+  @if ($color != inherit) {
+	color: $color;
+  }
+  @if ($family != inherit) {
+	font-family: $family;
+  }
+  @if ($weight != inherit) {
+	font-weight: $weight;
+  }
+  @if ($style != inherit) {
+	font-style: $style;
+  }
+  @if ($lineHeight != inherit) {
+	line-height: $lineHeight;
+  }
+  @if ($letterSpacing != inherit) {
+	letter-spacing: $letterSpacing;
+  }
+}
+
+// Обрезка текста...
+@mixin elipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Границы
+@mixin border($color: #000, $width: 1px, $radius: inherit, $style: solid) {
+  border: $width $style $color;
+
+  @if ($radius != inherit) {
+	border-radius: $radius;
+  }
+}
+
+// Плавная смена свойств.
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+// Используется для перекрытия блока.
+@mixin full-size($bgColor: transparent) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  @if ($bgColor != transparent) {
+	background-color: $bgColor;
+  }
+}
+
+// Список, содержащий inline-block.
+@mixin inline-list($verticalAlign: top, $fontSize: medium) {
+  font-size: 0;
+
+  & > * {
+	display: inline-block;
+	vertical-align: $verticalAlign;
+	font-size: $fontSize;
+  }
+}
+
+// Список, выровненный по ширине
+@mixin justify-list($verticalAlign: top, $fontSize: medium) {
+  text-align: justify;
+  font-size: 0;
+
+  &::after {
+	display: inline-block;
+	width: 100%;
+	content: '';
+  }
+
+  & > * {
+	display: inline-block;
+	vertical-align: $verticalAlign;
+	text-align: left;
+	font-size: $fontSize;
+  }
+}
+
+// Вложенные нумерованные списки
+@mixin decimal-list($delimiter: '.', $selector: li) {
+  counter-reset: item;
+
+  #{$selector} {
+	&::before {
+	  content: counters(item, $delimiter) '#{$delimiter} ';
+	  counter-increment: item;
+	}
+  }
+}
+
+// Clearfix
+@mixin clearfix() {
+  &::after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+}
+
+// Иконка при наведении.
+@mixin icon-hover($width, $height, $x, $y, $hover-x, $hover-y, $imageName: 'sprite.png', $duration: 0.3s, $property: all, $ease: ease-out, $delay: 0s) {
+  position: relative;
+  width: $width;
+  height: $height;
+
+  &::before,
+  &::after {
+	content: '';
+	@include full-size();
+	@include transition ($property $duration $ease $delay);
+  }
+
+  &::before {
+	@include sprite($x, $y, $imageName);
+	opacity: 1;
+  }
+
+  &::after {
+	@include sprite ($hover-x, $hover-y, $imageName);
+	opacity: 0;
+  }
+
+  &:hover {
+	&::before {
+	  opacity: 0;
+	}
+
+	&::after {
+	  opacity: 1;
+	}
+  }
+}
+
+// Градиент.
+@mixin gradient($gradient, $gradient-bottom: darken($gradient, 15%)) {
+  background: linear-gradient(to bottom, $gradient 0%, $gradient-bottom 100%);
+}
+
+@mixin horizontal-gradient($gradient-left, $gradient-right: darken($gradient-left, 15%)) {
+  background: linear-gradient(to right, $gradient-left, $gradient-right);
+}
+
+// Убирание желтого фона у полей с автокомплитом в Google Chrome
+@mixin autofill($color: $white) {
+  &:-webkit-autofill {
+	-webkit-box-shadow: inset 0 0 0 50px $white !important;
+	-webkit-text-fill-color: $color !important;
+	color: $color !important;
+  }
+}
+
+@mixin createFont($folder: '', $fontName: '', $fontWeight: 'normal', $fontStyle: 'normal') {
+  font-family: $fontName;
+  src: url('#{$fontPath}#{$folder}/#{$fontName}/#{$fontName}.eot'),
+  url('#{$fontPath}#{$folder}/#{$fontName}/#{$fontName}.otf') format('opentype'),
+  url('#{$fontPath}#{$folder}/#{$fontName}/#{$fontName}.woff') format('woff'),
+  url('#{$fontPath}#{$folder}/#{$fontName}/#{$fontName}.ttf') format('truetype'),
+  url('#{$fontPath}#{$folder}/#{$fontName}/#{$fontName}.svg') format('svg');
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin box-shadow() {
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .1);
+}
