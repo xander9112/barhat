@@ -1,12 +1,20 @@
-$fontPath: '/assets/fonts';
-$imagePath: '/assets/images/';
+$fontPath: '/dist/fonts';
+$imagePath: '/dist/images/';
 
 /* *** FONTS *** */
 
-$f-oranien-baum-regular: 'OranienBaumRegular';
-$f-rale-way-semibold: 'RaleWaySemibold';
+$--font-oranien-baum-regular: 'OranienBaumRegular';
+$--font-rale-way-semibold: 'RaleWaySemibold';
+$--font-lato-regular: 'LatoRegular';
 
 /* *** COLORS *** */
-$c-white: #fff;
-$c-black: #000;
-$c-main-color: #a57e49;
+$--color-white: #fff;
+$--color-black: #000;
+$--color-main: #997034;
+$--color-gray: #696b6c;
+$--color-text-primary: #30373b;
+
+$--breakpoin-sm: 576px;
+$--breakpoin-md: 768px;
+$--breakpoin-lg: 992px;
+$--breakpoin-xl: 1200px;

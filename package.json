@@ -21,11 +21,15 @@
   },
   "homepage": "https://github.com/xander9112/barhat#readme",
   "devDependencies": {
+    "imports-loader": "^0.7.1",
     "laravel-mix": "^1.7.2"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "jquery": "^3.3.0",
     "jquery-form-styler": "^2.0.1",
-    "jquery-validation": "^1.17.0"
+    "jquery-validation": "^1.17.0",
+    "owl.carousel": "^2.2.0",
+    "popper.js": "^1.12.9"
   }
 }

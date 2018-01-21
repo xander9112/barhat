@@ -19,3 +19,14 @@
   url('#{$fontPath}/OranienBaum/regular/regular.eot?#iefix') format('embedded-opentype'),
   url('#{$fontPath}/OranienBaum/regular/regular.svg#OranienBaumRegular') format('svg');
 }
+
+@font-face {
+  font-family: 'LatoRegular';
+
+  src: url('#{$fontPath}/Lato/regular/regular.eot');
+  src: url('#{$fontPath}/Lato/regular/regular.woff2') format('woff2'),
+  url('#{$fontPath}/Lato/regular/regular.woff') format('woff'),
+  url('#{$fontPath}/Lato/regular/regular.ttf') format('truetype'),
+  url('#{$fontPath}/Lato/regular/regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontPath}/Lato/regular/regular.svg#LatoRegular') format('svg');
+}

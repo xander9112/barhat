@@ -1,0 +1,145 @@
+.main-nav {
+  padding: 30px 0;
+  position: relative;
+  //background: url('#{$imagePath}/main-nav-bg.png');
+  background: $--color-white;
+  text-align: center;
+
+  &__phone {
+	margin: 20px 0 10px 0;
+	color: $--color-text-primary;
+	font-family: $--font-oranien-baum-regular;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 19px;
+	letter-spacing: 0.5px;
+
+	.fa {
+	  margin-right: 10px;
+	  color: $--color-main;
+	}
+  }
+
+  &__toggle {
+	&-line {
+	  width: 16px;
+	  height: 3px;
+	  margin-bottom: 2px;
+	  background: $--color-main;
+	}
+  }
+
+  &__close {
+	position: absolute;
+	right: 20px;
+
+	&-line {
+	  width: 20px;
+	  height: 1px;
+	  background: $--color-text-primary;
+
+	  &:first-child {
+		transform: rotate(-45deg);
+	  }
+
+	  &:last-child {
+		transform: rotate(45deg);
+	  }
+	}
+  }
+
+  @media(min-width: $--breakpoin-md) {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	padding: 20px 0;
+	z-index: 10;
+	transition: padding .3s ease-out;
+
+	&__phone {
+	  margin: 0;
+	  justify-content: flex-end;
+	}
+
+	&_opened {
+	  .navigation {
+		&-wrap {
+		  display: flex;
+		  //background: url('#{$imagePath}/main-nav-bg.png');
+		  background: $--color-white;
+		}
+	  }
+	}
+
+	&_fixed {
+	  position: fixed;
+	  padding: 10px 0;
+	}
+  }
+
+  @media (min-width: $--breakpoin-lg) {
+
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  a {
+	font-family: $--font-oranien-baum-regular;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: $--color-text-primary;
+	line-height: 3;
+  }
+
+  @media(min-width: $--breakpoin-md) {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: flex-start;
+
+	&-wrap {
+	  z-index: 1;
+	  position: absolute;
+	  display: none;
+	  width: 100%;
+	  height: 100%;
+	}
+
+	a {
+	  margin: 0 10px;
+	  line-height: $line-height-base;
+	}
+  }
+
+  @media (min-width: $--breakpoin-lg) {
+	justify-content: space-between;
+
+	&-wrap {
+	  position: relative;
+	  display: block;
+	}
+  }
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+	margin: 0 6px;
+	font-size: 14px;
+	color: $--color-main;
+  }
+
+  @media(min-width: $--breakpoin-md) {
+
+  }
+}

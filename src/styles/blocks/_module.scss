@@ -1,3 +1,72 @@
-@import "contacts";
-@import "social-links";
-@import "coming-soon";
+@import "btn";
+@import "main-nav";
+@import "main-slider";
+@import "left-nav";
+@import "service-card";
+@import "working-steps";
+@import "footer";
+
+html {
+  font-family: $--font-oranien-baum-regular;
+}
+
+.page-title {
+  font-family: $--font-oranien-baum-regular;
+  font-size: 50px;
+  color: $--color-text-primary;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.page-description {
+  font-family: $--font-lato-regular;
+  font-size: 10px;
+  color: $--color-text-primary;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.page-content {
+  margin: 50px 0;
+
+  p {
+	font-size: 18px;
+  }
+}
+
+.page-block {
+  padding: 70px 0;
+}
+
+.background-color {
+  &_gray {
+	background: #e9e9e9;
+  }
+}
+
+.p-main {
+  margin-top: 0;
+  transition: margin-top .3s ease-out;
+}
+
+@media (min-width: $--breakpoin-md) {
+  .page-title {
+	text-align: left;
+  }
+
+  .page-description {
+	text-align: left;
+  }
+
+  .p-main {
+	margin-top: 120px;
+  }
+}
+
+@media (min-width: $--breakpoin-lg) {
+  .p-main {
+	margin-top: 90px;
+  }
+}

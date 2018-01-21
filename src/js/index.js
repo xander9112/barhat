@@ -1,7 +1,5 @@
-import $ from 'jquery'
+import 'bootstrap'
 import Application from './Application'
-
-import '../styles/app.scss'
 
 const $$ = $$ || {}
 
@@ -10,11 +8,11 @@ $(function () {
   $$.body = $(document.body)
   $$.windowWidth = $$.window.width()
   $$.windowHeight = $$.window.height()
-  
+
   $$.application = new Application()
-  
+
   $$.ESCAPE_KEY_CODE = 27
-  
+
   $$.window.on('resize', function () {
     $$.windowWidth = $$.window.width()
     $$.windowHeight = $$.window.height()

@@ -1,9 +1,7 @@
 import Tabs from './Components/Tabs'
+import OwlCarousel from './Components/OwlCarousel'
+import MainNav from './Components/MainNav'
 
-// import Component1 from 'Components/Component1'
-// import Component2 from 'Components/Component2'
-
-import 'jquery'
 import 'jquery-validation'
 import './plugins/jquery.formstyler'
 
@@ -13,8 +11,8 @@ import './plugins/jquery.formstyler'
 export default class Application {
   constructor () {
     this._initComponents()
-
-    console.log('Application class is working now')
+    //    TODO: УДАЛИТЬ!!!!
+    this._initAssets()
 
     $('input, select').styler()
 
@@ -62,6 +60,12 @@ export default class Application {
   }
 
   _initComponents () {
+    $('.js-services-carousel').each((index, element) => {
+      new OwlCarousel($(element))
+    })
+
+    new MainNav($('.js-main-nav'))
+
     $('.js-component').each((index, element) => {
       const componentName = $(element).data('component')
       const options = $(element).data('options')
@@ -78,5 +82,13 @@ export default class Application {
         let component = new componentClass.default($(element), options)
       }
     })
+  }
+
+  _initAssets () {
+    if (location.host === '192.168.0.150') {
+      $('html').find('[rel="stylesheet"]').attr('href', `./dist/app.css?time=${+new Date()}`)
+    }
+
+    //    $('.main-slider__footer-title').html($(window).width())
   }
 }

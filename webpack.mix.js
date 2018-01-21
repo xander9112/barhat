@@ -1,4 +1,4 @@
-let mix = require('laravel-mix')
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -20,8 +20,11 @@ mix.webpackConfig({
   }
 })
 
-mix.js('src/js/index.js', 'dist/')
-  .sass('src/styles/app.scss', 'dist/')
+mix.js('src/js/index.js', 'dist/index.js')
+  .sass('src/styles/app.scss', 'dist/app.css')
+
+mix.copy('src/fonts', 'dist/fonts')
+mix.copy('src/images', 'dist/images')
 
 // Full API
 // mix.js(src, output);
@@ -37,7 +40,7 @@ mix.js('src/js/index.js', 'dist/')
 // mix.browserSync('my-site.dev');
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
-// mix.copy(from, to);
+
 // mix.copyDirectory(fromDir, toDir);
 // mix.minify(file);
 // mix.sourceMaps(); // Enable sourcemaps

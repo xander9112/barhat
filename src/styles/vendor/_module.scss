@@ -1,2 +1,21 @@
 @import "reset";
-@import "flexboxgrid";
+@import "./font-awesome/font-awesome";
+@import "./owl.carousel";
+
+$primary: #997034;
+
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+$font-family-base: $--font-oranien-baum-regular;
+
+$input-btn-padding-y: .775rem;
+$input-btn-padding-x: 1rem;
+$btn-focus-box-shadow: none;
+$input-bg: transparent;
+$enable-rounded: false;
+
+@import "~bootstrap/scss/bootstrap";
+@import "./bootstrap/buttons";
+@import "./bootstrap/forms";
