@@ -1,5 +1,5 @@
 .working-steps {
-  margin-top: 80px;
+  margin-top: 40px;
 
   .step {
 	display: flex;
@@ -29,12 +29,13 @@
 	  color: $--color-text-primary;
 	  text-transform: uppercase;
 	  margin-left: 10px;
+	  letter-spacing: 3px;
 	}
   }
 
   a {
 	display: flex;
-	margin-top: 20px;
+	margin-top: 60px;
 	justify-content: flex-end;
 	align-items: center;
 	text-transform: uppercase;
@@ -51,12 +52,43 @@
 	}
   }
 
-  @media (min-width: $--breakpoin-md) {
+  &_page {
+	margin-top: 0;
+	margin-bottom: 40px;
+
 	.step {
-	  margin: 0;
+	  flex-direction: column;
+	  align-items: flex-start;
+
+	  &:before {
+		display: none;
+	  }
+
+	  &__inner {
+		display: flex;
+		align-items: center;
+	  }
+
+	  &__description {
+		margin-top: 20px;
+	  }
+	}
+  }
+
+  @media (min-width: $--breakpoin-md) {
+	margin-top: 80px;
+
+	.step {
+	  margin: 0 0 20px 0;
 
 	  &:before {
 		display: block;
+	  }
+
+	  &_hide-arrow {
+		&:before {
+		  display: none;
+		}
 	  }
 	}
 
@@ -65,5 +97,83 @@
 		justify-content: flex-end;
 	  }
 	}
+
+	&_page {
+	  margin-top: 0;
+	  margin-bottom: 40px;
+
+	  .step {
+		align-items: flex-end;
+
+		&__title {
+		  width: 120px;
+		}
+
+		&:before {
+		  display: none;
+		}
+	  }
+
+	  .working-step {
+		&:nth-child(odd) {
+		  .working-step__inner {
+			position: relative;
+
+			&:after {
+			  content: '';
+			  position: absolute;
+			  top: 0;
+			  right: 0;
+			  width: 1px;
+			  height: 100%;
+			  background: #000;
+			}
+		  }
+
+		  .step {
+			margin-right: 40px;
+
+			&__count {
+			  order: 1;
+			  margin-left: 10px;
+			}
+
+			&__title {
+			  order: 0;
+			  text-align: right;
+			}
+
+			&__description {
+			  text-align: right;
+			}
+		  }
+		}
+
+		&:nth-child(even) {
+		  .working-step__inner {
+			position: relative;
+
+			&:before {
+			  content: '';
+			  position: absolute;
+			  top: 0;
+			  left: -1px;
+			  width: 1px;
+			  height: 100%;
+			  background: #000;
+			}
+		  }
+
+		  .step {
+			margin-left: 40px;
+			align-items: flex-start;
+		  }
+		}
+	  }
+	}
+  }
+
+  @media (min-width: $--breakpoin-lg) {
+
   }
 }

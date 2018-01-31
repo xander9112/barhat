@@ -4,19 +4,41 @@
 @import 'mixins';
 
 /* Change Autocomplete styles in Chrome*/
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
-input:-webkit-autofill:focus
+input:-webkit-autofill:focus,
 input:-webkit-autofill,
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid transparent;
-  //-webkit-text-fill-color: transparent;
+  border-bottom: 1px solid $--color-main;
+  -webkit-text-fill-color: $--color-text-primary;
   background-color: transparent;
   -webkit-box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+form.dark {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+	border: 1px solid transparent;
+	border-bottom: 1px solid $--color-main;
+	-webkit-text-fill-color: $--color-white;
+	background-color: transparent;
+	-webkit-box-shadow: 0 0 0 1000px transparent inset;
+	transition: background-color 5000s ease-in-out 0s;
+  }
 }

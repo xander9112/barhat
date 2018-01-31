@@ -7,16 +7,18 @@
 .form-control {
   display: block;
   width: 100%;
-  padding: $input-padding-y 0 $input-padding-y $input-padding-x;
-  font-size: $font-size-base;
+  padding: $input-padding-y 0 $input-padding-y 0;
+  font-size: 10px;
   line-height: $input-line-height;
-  color: $input-color;
+  color: $--color-text-primary;
   background-color: $input-bg;
   background-clip: padding-box;
   border: none;
   border-bottom: 1px solid $--color-main;
-  text-align: right;
+  text-align: left;
   font-family: $--font-lato-regular;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @if $enable-rounded {
@@ -38,12 +40,25 @@
 
   // Customize the `:focus` state to imitate native WebKit styles.
   &:focus {
-	color: $input-focus-color;
+	color: $--color-text-primary;
 	background-color: $input-focus-bg;
 	border-color: transparent;
 	border-bottom: 1px solid $--color-main;
 	outline: 0;
 	box-shadow: none;
+
+	&::-webkit-input-placeholder {
+	  color: transparent
+	}
+	&::-moz-placeholder {
+	  color: transparent
+	}
+	&:-moz-placeholder {
+	  color: transparent
+	}
+	&:-ms-input-placeholder {
+	  color: transparent
+	}
   }
 
   // Placeholder
@@ -51,6 +66,7 @@
 	color: $input-placeholder-color;
 	// Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
 	opacity: 1;
+	text-align: left;
   }
 
   // Disabled and read-only inputs
@@ -63,6 +79,37 @@
 	background-color: $input-disabled-bg;
 	// iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
 	opacity: 1;
+  }
+
+  &.error {
+	&,
+	&:focus {
+	  color: $--color-red;
+	  border-bottom-color: $--color-red;
+	}
+  }
+}
+
+form {
+  .error-content {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	color: $--color-red;
+	font-family: $--font-lato-regular;
+	font-size: 12px;
+	letter-spacing: 1.5px;
+  }
+
+  &.dark {
+	.form-control {
+	  color: $input-color;
+
+	  &:focus {
+		color: $input-focus-color;
+	  }
+	}
   }
 }
 
@@ -181,6 +228,39 @@ select.form-control-lg {
 
 .form-group {
   margin-bottom: $form-group-margin-bottom;
+
+  &_error {
+	position: relative;
+
+	&:after {
+	  content: '!';
+	  position: absolute;
+	  right: 0;
+	  top: 10px;
+	  border: 1px solid $--color-red;
+	  padding: 5px;
+	  color: $--color-red;
+	  border-radius: 50%;
+	  width: 20px;
+	  height: 20px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  font-size: 11px;
+	}
+
+	label.error {
+	  display: none !important;
+	  line-height: 1;
+	  letter-spacing: 1.5px;
+	  font-size: 12px;
+	  font-family: $--font-lato-regular;
+	  text-transform: uppercase;
+	  margin-top: 10px;
+	  margin-bottom: 0;
+	  color: $--color-red;
+	}
+  }
 }
 
 .form-text {

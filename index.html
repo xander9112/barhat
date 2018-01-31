@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="./dist/app.css?time=12321">
+	<link rel="stylesheet" href="./dist/app.css?time=1f2321">
 
 	<title>Barhat</title>
 </head>
 <body>
 <div class="p-page">
 	<header>
-		<div class="main-nav js-main-nav">
+		<div class="main-nav main-nav_main-page js-main-nav">
 			<div class="container">
-				<div class="row align-items-center justify-content-center">
+				<div class="row align-items-center justify-content-between">
 					<div class="col-md-1 d-none d-md-block d-lg-none">
 						<div class="main-nav__toggle js-toggle">
 							<div class="main-nav__toggle-line"></div>
@@ -21,25 +21,48 @@
 							<div class="main-nav__toggle-line"></div>
 						</div>
 					</div>
-					<div class="col-12 col-md-4 col-lg-2 text-center">
+					<div class="col-6 col-md-4 col-lg-2 offset-3 offset-md-0 text-center main-nav__logo-wrap">
 						<a href="/">
-							<img src="/dist/images/main-nav-logo.png" alt="" class="img-fluid">
+							<!--<img src="/dist/images/main-nav-logo.png" alt="" class="img-fluid main-nav__logo">-->
+							<img src="/dist/images/logo.svg" alt="" class="img-fluid main-nav__logo">
 						</a>
 					</div>
-					<div class="col-6  col-md-3 col-lg-2 order-4 order-md-1">
+					<div class="col-6 offset-3 offset-md-0 col-md-3 col-lg-2 order-4 order-md-1">
 						<div class="social-links">
-							<a href="#"><i class="fa fa-instagram"></i></a>
-							<a href="#"><i class="fa fa-vk"></i></a>
-							<a href="#"><i class="fa fa-facebook-official"></i></a>
-							<a href="#"><i class="fa fa-youtube-play"></i></a>
+							<a href="https://www.instagram.com/a_barhat/" target="_blank"><i class="fa fa-instagram"></i></a>
+							<a href="https://vk.com/barhatagency " target="_blank"><i class="fa fa-vk"></i></a>
+							<a href="https://www.facebook.com/groups/barhatagency/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+							<a href="https://www.youtube.com/channel/UCNHhGOyxKCFUHQSihgGKFeA" target="_blank"><i class="fa fa-youtube-play"></i></a>
 						</div>
 					</div>
 					<div class="col-12 col-md-0 col-lg-5 order-3 order-lg-2 navigation-wrap">
 						<nav class="navigation">
-							<a href="" class="item">Услуги</a>
-							<a href="" class="item">Как мы работаем</a>
-							<a href="" class="item">Проекты</a>
-							<a href="" class="item">Контакты</a>
+							<ul class="nav js-nav">
+								<li>
+									<a href="#">
+										Услуги
+										<i class="fa fa-chevron-down"></i>
+										<i class="fa fa-chevron-up"></i>
+									</a>
+									<ul>
+										<li>
+											<a href="#">Логотипы</a>
+										</li>
+										<li>
+											<a href="#">Фирменный стиль</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="/working.html">Как мы работаем</a>
+								</li>
+								<li>
+									<a href="/projects.html">Проекты</a>
+								</li>
+								<li>
+									<a href="#">Контакты</a>
+								</li>
+							</ul>
 							<div class="main-nav__close js-toggle d-none d-md-block d-lg-none">
 								<div class="main-nav__close-line"></div>
 								<div class="main-nav__close-line"></div>
@@ -56,23 +79,24 @@
 		</div>
 	</header>
 
-	<main class="p-main">
+	<main class="p-main p-main_main-page">
 		<div class="main-slider">
 			<div class="main-slider__image">
-				<img src="/data/images/main-slider.jpg" alt="">
+				<img src="/data/images/main-slider.jpg" class="js-center-image" alt="">
+				<div class="clearfix"></div>
 			</div>
 			<div class="main-slider__content">
 				<div class="container">
 					<div class="row">
 						<div class="col-5">
-							<div class="main-slider__content-logo d-none d-lg-block">
+							<div class="main-slider__content-logo d-none d-md-block js-slider-logo">
 								<img src="./dist/images/small-logo.png" alt="">
 							</div>
 							<div class="main-slider__content-description d-none d-md-block">
 								Можем больше, чем всё!
 							</div>
 							<div class="main-slider__content-button d-none d-md-block">
-								<a href="#" class="btn btn-primary">Проекты <i class="fa fa-angle-right"></i></a>
+								<a href="/projects.html" class="btn btn-primary">Проекты <i class="fa fa-chevron-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -83,7 +107,7 @@
 					<div class="row justify-content-center">
 						<div class="col-12 col-md-4">
 							<div class="main-slider__footer-title">Почему мы?</div>
-							<div class="main-slider__footer-description">Статистика говорит за нас?</div>
+							<div class="main-slider__footer-description">Статистика говорит за нас</div>
 						</div>
 						<div class="col-6 col-md-3">
 							<div class="main-slider__footer-statistic">
@@ -92,7 +116,9 @@
 								</div>
 								<div class="main-slider__footer-statistic-title">
 									Успешно
+									<br>
 									завершенных
+									<br>
 									проектов
 								</div>
 							</div>
@@ -134,14 +160,23 @@
 						<div class="page-title">Услуги</div>
 						<div class="page-description">Направление деятельности</div>
 
-						<div class="left-nav">
-							<a href="#" class="left-nav__item">Логотипы</a>
-							<a href="#" class="left-nav__item">Фирменный стиль</a>
-							<a href="#" class="left-nav__item">Упаковка</a>
-							<a href="#" class="left-nav__item">Маркетинг</a>
-
-							<a href="#" class="left-nav__item_btn btn btn-primary">Все услуги <i class="fa fa-angle-right"></i></a>
-						</div>
+						<ul class="left-nav">
+							<li class="left-nav__item">
+								<a href="#">Логотипы</a>
+							</li>
+							<li class="left-nav__item">
+								<a href="#">Фирменный стиль</a>
+							</li>
+							<li class="left-nav__item">
+								<a href="#">Упаковка</a>
+							</li>
+							<li class="left-nav__item">
+								<a href="#">Маркетинг</a>
+							</li>
+							<li class="left-nav__item_btn">
+								<a href="#" class="btn btn-primary">Все услуги <i class="fa fa-chevron-right"></i></a>
+							</li>
+						</ul>
 					</div>
 					<div class="col-12 col-md-8 col-lg-9">
 						<div class="js-services-carousel owl-carousel owl-theme">
@@ -197,7 +232,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="page-title">Как мы работаем</div>
-						<div class="page-description">Здесь какой то подзаголовок</div>
+						<div class="page-description">Этапы работы</div>
 						<div class="page-content">
 							<p>
 								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
@@ -208,7 +243,7 @@
 						</div>
 						<div class="container working-steps">
 							<div class="row justify-content-center">
-								<div class="col-8 col-md-3">
+								<div class="col-8 col-md-6 col-lg-3">
 									<div class="step step_hide-arrow">
 										<div class="step__count">
 											<img src="./dist/images/step-1.png" alt="">
@@ -216,7 +251,7 @@
 										<div class="step__title">Заполнение <br>брифа</div>
 									</div>
 								</div>
-								<div class="col-8 col-md-3">
+								<div class="col-8 col-md-6 col-lg-3">
 									<div class="step">
 										<div class="step__count">
 											<img src="./dist/images/step-2.png" alt="">
@@ -224,7 +259,7 @@
 										<div class="step__title">Согласование <br>условий работы</div>
 									</div>
 								</div>
-								<div class="col-8 col-md-3">
+								<div class="col-8 col-md-6 col-lg-3">
 									<div class="step">
 										<div class="step__count">
 											<img src="./dist/images/step-3.png" alt="">
@@ -232,7 +267,7 @@
 										<div class="step__title">Выполнение <br>работы</div>
 									</div>
 								</div>
-								<div class="col-8 col-md-3">
+								<div class="col-8 col-md-6 col-lg-3">
 									<div class="step">
 										<div class="step__count">
 											<img src="./dist/images/step-4.png" alt="">
@@ -243,7 +278,8 @@
 							</div>
 							<div class="row">
 								<div class="col">
-									<a href="#" class="working-steps__link">О работе подробнее <i class="fa fa-angle-right"></i></a>
+									<a href="/working.html" class="working-steps__link">О работе подробнее <i
+											class="fa fa-chevron-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -257,42 +293,49 @@
 		<div class="footer__top">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-10 col-md-3">
+					<div class="col-10 col-md-3 order-md-2">
 						<nav class="navigation">
 							<a href="" class="item">Главная</a>
-							<a href="" class="item">Как мы работаем</a>
+							<a href="/working.html" class="item">Как мы работаем</a>
 							<a href="" class="item">Услуги</a>
-							<a href="" class="item">Проекты</a>
+							<a href="/projects.html" class="item">Проекты</a>
 							<a href="" class="item">Отзывы</a>
 							<a href="" class="item">Контакты</a>
 						</nav>
 					</div>
-					<div class="col-10 col-md-3 text-center">
-						<a href="/">
-							<img src="./dist/images/small-logo_white.png" alt="">
-						</a>
-						<div class="social-links">
-							<a href="#"><i class="fa fa-instagram"></i></a>
-							<a href="#"><i class="fa fa-vk"></i></a>
-							<a href="#"><i class="fa fa-facebook-official"></i></a>
-							<a href="#"><i class="fa fa-youtube-play"></i></a>
-						</div>
-						<div class="contacts">
-							<div class="contacts__inner">
-								<a href="#">
-									<i class="fa fa-mobile"></i> +7 952 542 35 89
-								</a>
-								<a href="#">
-									<i class="fa fa-phone"></i> +7 952 542 35 89
-								</a>
-								<a href="#">
-									<i class="fa fa-envelope"></i> info@a-barhat.ru
-								</a>
+					<div class="col-10 col-md-3 order-md-1 text-center">
+						<div class="contacts__wrap">
+							<a href="/">
+								<img src="./dist/images/small-logo_white.png" alt="" class="img-fluid footer__logo">
+							</a>
+							<div class="social-links">
+								<a href="https://www.instagram.com/a_barhat/" target="_blank"><i class="fa fa-instagram"></i></a>
+								<a href="https://vk.com/barhatagency " target="_blank"><i class="fa fa-vk"></i></a>
+								<a href="https://www.facebook.com/groups/barhatagency/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+								<a href="https://www.youtube.com/channel/UCNHhGOyxKCFUHQSihgGKFeA" target="_blank"><i class="fa fa-youtube-play"></i></a>
+							</div>
+							<div class="contacts">
+								<div class="contacts__inner">
+									<div class="contacts__item">
+										<i class="fa fa-mobile"></i> +7 (952) 542 35 89
+									</div>
+									<div class="contacts__item">
+										<i class="fa fa-phone"></i> +7 (473) 294 97 53
+									</div>
+									<div class="contacts__item">
+										<i class="fa fa-envelope"></i> info@a-barhat.ru
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-6 col-md-6">
-						<form action="#">
+					<div class="col-8 col-md-6 order-md-3">
+						<form action="#" class="dark js-form">
+							<div class="row">
+								<div class="col-12">
+									&nbsp;
+								</div>
+							</div>
 							<div class="row justify-content-center">
 								<div class="col-12 col-md-4">
 									<div class="form-group">
@@ -312,14 +355,32 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
+									&nbsp;
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									&nbsp;
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
 									<div class="form-group">
 										<textarea class="form-control" placeholder="Ваш комментарий" rows="2"></textarea>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-12 text-right">
-									<button type="submit" class="btn">Оставить заявку <i class="fa fa-angle-right"></i></button>
+								<div class="col-12">
+									&nbsp;
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<div class="error-content js-error-content"></div>
+								</div>
+								<div class="col-12 col-md-6 text-right">
+									<button type="submit" class="btn">Оставить заявку <i class="fa fa-chevron-right"></i></button>
 								</div>
 							</div>
 						</form>
@@ -331,10 +392,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-6 footer__bottom-copyright">
-						@ дизайн-агенство "barhat". Все права защищены
+						@ дизайн-агентство "barhat". Все права защищены
 					</div>
 					<div class="col-12 col-md-6 footer__bottom-copyright">
-						пользовательское соглашение
+						<a href="#">
+							пользовательское соглашение
+						</a>
 					</div>
 				</div>
 			</div>
@@ -342,6 +405,6 @@
 	</footer>
 </div>
 
-<script src="./dist/index.js"></script>
+<script src="./dist/index.js?time=afafs"></script>
 </body>
 </html>

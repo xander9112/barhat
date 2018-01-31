@@ -6,15 +6,18 @@
 
 .btn {
   display: inline-block;
+  font-family: $--font-lato-regular;
   font-weight: $btn-font-weight;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: $btn-border-width solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
-
+  font-size: 12px;
   // Share hover and focus styles
   @include hover-focus {
 	text-decoration: none;
@@ -46,6 +49,10 @@
 	&:focus {
 	  @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
 	}
+  }
+
+  .fa {
+	font-size: 10px;
   }
 }
 
@@ -139,6 +146,14 @@ input[type="button"] {
 }
 
 .btn {
+  &_dark {
+	color: $--color-text-primary;
+
+	&:hover {
+	  color: $--color-main;
+	}
+  }
+
   &-primary {
 	&:not(:disabled):not(.disabled):active:focus,
 	&:not(:disabled):not(.disabled).active:focus,
@@ -162,5 +177,27 @@ input[type="button"] {
 	  background: #2a3c45;
 	}
 
+	&_transparent {
+	  background: transparent;
+	  color: $--color-main;
+
+	  &:hover {
+		background: $--color-main;
+	  }
+	}
+  }
+
+  &_full-width {
+	width: 100%;
+  }
+
+  &_center {
+	justify-content: center;
+  }
+
+  @media (min-width: $--breakpoin-xl) {
+	.fa {
+	  margin-left: 20px;
+	}
   }
 }

@@ -5,15 +5,20 @@
 
   &__image {
 	position: relative;
-	right: 100%;
-	transform: translateX(-100%);
+	//right: 100%;
+	//transform: translateX(-100%);
+
+	img {
+	  min-width: 100%;
+	  float: right;
+	}
   }
 
   &__content {
 	width: 100%;
 	position: absolute;
 	z-index: 1;
-	top: 20%;
+	top: 16%;
 	text-align: center;
 
 	&-description {
@@ -21,6 +26,7 @@
 	  font-family: $--font-oranien-baum-regular;
 	  font-size: 30px;
 	  color: $--color-white;
+	  line-height: 1;
 	}
 
 	&-button {
@@ -40,18 +46,17 @@
 	  color: $--color-white;
 	  font-size: 40px;
 	  text-transform: uppercase;
-	  margin-bottom: 10px;
 	  letter-spacing: 2px;
 	  text-align: center;
 	}
 
 	&-description {
-	  font-family: $--font-oranien-baum-regular;
+	  font-family: $--font-lato-regular;
 	  color: $--color-white;
 	  font-size: 10px;
 	  text-transform: uppercase;
 	  letter-spacing: 4px;
-
+	  margin-bottom: 10px;
 	  text-align: center;
 	}
 
@@ -61,6 +66,7 @@
 	  flex-direction: column;
 	  align-items: center;
 	  height: 100%;
+	  margin-bottom: 10px;
 
 	  &-count {
 		font-family: $--font-oranien-baum-regular;
@@ -82,7 +88,7 @@
 		  display: none;
 		  content: '';
 		  width: 90px;
-		  height: 2px;
+		  height: 1px;
 		  position: absolute;
 		  transform: rotate(-50deg);
 		  left: -50px;
@@ -93,19 +99,39 @@
 	}
   }
 
+  .btn {
+	font-family: $--font-lato-regular;
+  }
+
+  @media (min-width: $--breakpoin-sm) {
+	&__image {
+	  //right: 50%;
+	}
+  }
+
   @media (min-width: $--breakpoin-md) {
 	&__image {
-	  right: 0;
+	  //left: 0;
+	  //right: inherit;
+	  //transform: translateX(75%);
 	}
 
 	&__footer {
 	  &-title {
 		font-size: 30px;
+		text-align: left;
+		margin-bottom: 10px;
+	  }
+
+	  &-description {
+		text-align: left;
+		margin-bottom: 0;
 	  }
 
 	  &-statistic {
 		flex-direction: row;
 		justify-content: flex-start;
+		margin-bottom: 0;
 
 		&-count {
 		  align-self: flex-start;
@@ -127,10 +153,8 @@
 
   @media (min-width: $--breakpoin-lg) {
 	&__image {
-	  position: relative;
-	  left: 0;
-	  right: inherit;
-	  transform: translateX(-50%);
+	  //position: relative;
+	  //transform: translateX(50%);
 	}
 
 	&__footer {
@@ -146,6 +170,10 @@
 
 		&-title {
 		  font-size: 9px;
+
+		  &:before {
+			left: -54px;
+		  }
 		}
 	  }
 	}
@@ -153,8 +181,8 @@
 
   @media (min-width: $--breakpoin-xl) {
 	&__image {
-	  left: 50%;
-	  transform: translateX(-50%);
+	  //left: 50%;
+	  //transform: translateX(0);
 	}
 
 	&__footer {
@@ -164,13 +192,17 @@
 
 	  &-statistic {
 		&-count {
-		  margin-right: 20px;
+		  margin-right: 40px;
 		  font-size: 40px;
 		}
 
 		&-title {
 		  margin-bottom: 7px;
 		  font-size: 10px;
+
+		  &:before {
+			left: -58px;
+		  }
 		}
 	  }
 	}

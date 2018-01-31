@@ -15,10 +15,14 @@ export default class OwlCarousel extends Component {
       responsiveClass: true,
       responsive: {
         0: {
+          items: 1,
+          nav: false
+        },
+        768: {
           items: 2,
           nav: false
         },
-        960: {
+        992: {
           items: 3,
           nav: true,
           loop: false

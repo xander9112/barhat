@@ -1,0 +1,152 @@
+.contacts {
+  &__page {
+	background: url('#{$imagePath}contacts__map.png') no-repeat;
+	background-size: auto;
+	background-position: 30% 0%;
+	padding-top: 150px;
+	padding-bottom: 40px;
+
+	.page-title {
+	  font-size: 30px;
+	  text-align: center;
+	  margin-top: 60px;
+	}
+
+	.contacts {
+	  &__inner {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	  }
+
+	  &__item {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+
+		font-size: 24px;
+		color: $--color-main;
+
+		.fa {
+		  color: $--color-text-primary;
+		  font-size: 24px;
+		  margin: 10px 0;
+
+		  &-phone {
+			font-size: 22px;
+		  }
+
+		  &-envelope {
+			font-size: 20px;
+		  }
+		}
+	  }
+
+	  &__files {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+	  }
+
+	  &__file {
+		display: flex;
+		align-items: flex-start;
+		font-size: 10px;
+		text-decoration: underline;
+		margin: 5px 0;
+
+		&:first-child {
+		  margin-bottom: 20px;
+		}
+
+		.fa {
+		  font-size: 14px;
+		  margin-left: 0;
+		  margin-right: 20px;
+		  margin-top: 0;
+		  color: $--color-text-primary;
+		  border-bottom: 1px solid transparent;
+		}
+	  }
+	}
+
+	.social-links {
+	  justify-content: center;
+	  margin: 20px 0 10px;
+
+	  a {
+		margin: 0 14px;
+		color: $--color-text-primary;
+
+		&:hover {
+		  color: $--color-main;
+		}
+
+		.fa {
+		  margin-left: 0;
+		}
+	  }
+	}
+
+	@media (min-width: $--breakpoin-md) {
+	  padding-top: 40px;
+	  padding-bottom: 280px;
+	  background-position: 50% 0;
+
+	  .page-title {
+		margin-top: 0;
+	  }
+
+	  .contacts {
+		&__inner {
+
+		}
+
+		&__files {
+		  margin-top: 40px;
+		}
+
+		&__file {
+		  font-size: 10px;
+		}
+
+		&__item {
+		  display: flex;
+		  justify-content: flex-start;
+		  flex-direction: row;
+		  font-size: 18px;
+
+		  .fa {
+			margin: 0;
+			margin-right: 15px;
+			font-size: 18px;
+
+			&-mobile {
+			  margin-left: 3px;
+			  margin-right: 16px;
+			}
+
+			&-phone {
+			  font-size: 16px;
+			}
+
+			&-envelope {
+			  font-size: 12px;
+			}
+		  }
+		}
+	  }
+
+	  .social-links {
+		justify-content: flex-start;
+
+		a {
+		  &:first-child {
+			margin-left: 0;
+		  }
+		}
+	  }
+	}
+  }
+}

@@ -4,6 +4,5 @@ node_modules/
 tmp/
 manifest.json
 *.log
-dist/
 testing/
 package-lock.json
